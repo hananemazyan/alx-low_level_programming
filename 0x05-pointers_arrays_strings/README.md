@@ -1,4 +1,4 @@
-# Here you will find more Exercices on C especially the part of the pointer 
+# Here you will find Arrays , Pointers and strings 
 
 ![pictureeee](https://github.com/hananemazyan/alx-low_level_programming/blob/master/sddsd.gif)
 
