@@ -43,8 +43,9 @@ void print_all(const char * const format, ...)
 				s_arg = va_arg(args, char *);
 
 				if (s_arg)
+				{
 					printf("%s", s_arg);
-				else
+				}
 					printf("(nil)");
 				break;
 			default:
