@@ -46,10 +46,7 @@ void print_all(const char * const format, ...)
 				{
 					printf("%s", s_arg);
 				}
-				if (s_arg == NULL)
-				{
 					printf("(nil)");
-				}
 				break;
 			default:
 				break;
