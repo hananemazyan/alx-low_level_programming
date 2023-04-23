@@ -9,10 +9,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, num_args = 0;
-	char c_arg;
-	char *s_arg;
-	int i_arg;
+	int i = 0, num_args = 0, i_arg;
+	char c_arg, *s_arg;
 	float f_arg;
 
 	va_start(args, format);
@@ -25,29 +23,21 @@ void print_all(const char * const format, ...)
 				c_arg = va_arg(args, int);
 				printf("%c", c_arg);
 				break;
-
 			case 'i':
 				num_args++;
 				i_arg = va_arg(args, int);
 				printf("%d", i_arg);
 				break;
-
 			case 'f':
 				num_args++;
 				f_arg = (float)va_arg(args, double);
 				printf("%f", f_arg);
 				break;
-
 			case 's':
 				num_args++;
 				s_arg = va_arg(args, char *);
-
 				if (s_arg)
-				{
 					printf("%s", s_arg);
-				}
-					printf("(nil)");
-				break;
 			default:
 				break;
 		}
