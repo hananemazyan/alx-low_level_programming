@@ -1,5 +1,5 @@
 #include <stdio.h>
-/* Functions that are executed before and after main() in C :www.geeksforgeeks.org */
+/* Functions that are executed before the main()in C:www.geeksforgeeks.org*/
 
 void first(void)__attribute__((constructor));
 /**
