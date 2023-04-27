@@ -2,10 +2,10 @@ section .data
 message db 'Hello, Holberton!' , 0x0A, 0x00
 
 section .text
-global main 
+global main
 extern printf
 
-main: 
+main:
 ; prepare argument for printf function
 push rbp
 mov rbp,rsp
