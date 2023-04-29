@@ -14,7 +14,7 @@ int count_word(char *s)
 		word = 0;
 		for (car = 0; s[car] != '\0'; car++)
 		{
-			if (s[c] == ' ')
+			if (s[car] == ' ')
 				flag = 0;
 			else if (flag == 0)
 			{
@@ -22,7 +22,7 @@ int count_word(char *s)
 				word++;
 			}
 		}
-		return (w);
+		return (word);
 }
 
 
