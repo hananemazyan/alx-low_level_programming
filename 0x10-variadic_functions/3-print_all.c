@@ -8,43 +8,41 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	int i = 0, num_args = 0, i_arg;
-	char c_arg, *s_arg;
-	float f_arg;
+	int i = 0;
+	char *str, *sp = "";
+	va_list list;
 
-	va_start(args, format);
-	while (format && format[i])
+	va_start(list, format);
+	if (format)
 	{
-		switch (format[i])
+		while (format[i])
 		{
-			case 'c':
-				num_args++;
-				c_arg = va_arg(args, int);
-				printf("%c", c_arg);
-				break;
-			case 'i':
-				num_args++;
-				i_arg = va_arg(args, int);
-				printf("%d", i_arg);
-				break;
-			case 'f':
-				num_args++;
-				f_arg = (float)va_arg(args, double);
-				printf("%f", f_arg);
-				break;
-			case 's':
-				num_args++;
-				s_arg = va_arg(args, char *);
-				if (s_arg)
-					printf("%s", s_arg);
-			default:
-				break;
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", sp, va_arg(list, int));
+					break;
+				case 'i':
+					printf("%s%d", sp, va_arg(list, int));
+					break;
+				case 'f':
+					printf("%s%f", sp, va_arg(list, double));
+					break;
+				case 's':
+					str = va_arg(list, char *);
+					if (!str)
+						str = "(nil)";
+					printf("%s%s", sp, str);
+					break;
+				default:
+					i++;
+					continue;
+			}
+			sp = ", ";
+			i++;
 		}
-		if (format[i + 1] != '\0' && num_args > 0)
-			printf(", ");
-		i++;
 	}
+
 	printf("\n");
-	va_end(args);
+	va_end(list);
 }
