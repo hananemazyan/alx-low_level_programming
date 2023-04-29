@@ -6,7 +6,7 @@
  * @s: string
  * Return: number of words
  */
-int count_word(char *s)
+int count_help(char *s)
 {
 		int flag, car, word;
 
@@ -39,7 +39,7 @@ char **strtow(char *str)
 
 	while (*(str + len))
 		len++;
-	words = count_word(str);
+	words = count_help(str);
 	if (words == 0)
 		return (NULL);
 	matrix = (char **) malloc(sizeof(char *) * (words + 1));
